@@ -16,7 +16,7 @@ function App() {
 
         {/* Imagem do Save the Date */}
         <img
-          src="/images/save_the_date.png"
+          src="/wedding-app/images/save_the_date.png"
           alt="Save the Date"
           className="w-56 h-auto md:w-72 rounded-lg shadow-lg border border-secondary"
         />
@@ -26,7 +26,7 @@ function App() {
       <section className="py-12 bg-card text-secondary text-center md:text-left md:flex items-center max-w-4xl mx-auto px-6 rounded-lg shadow-lg mt-6">
         {/* Foto do Casal */}
         <img
-          src="/images/miguel_marta.jpg"
+          src="/wedding-app/images/miguel_marta.jpg"
           alt="Miguel & Marta"
           className="w-48 h-48 mx-auto md:mx-0 md:mr-6 rounded-full shadow-md object-cover border-4 border-white"
         />
