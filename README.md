@@ -1,12 +1,38 @@
-# React + Vite
+# Wedding Web Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A single-page application (SPA) built with React and Tailwind CSS. This page manages wedding event details, collects guest messages, and tracks attendance.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Wedding Information:** Shows all the important details about the wedding.
+- **Transportation Options:** Provides transportation details for guests.
+- **RSVP and message Form:** Lets guests confirm their attendance and leave a message that will be sent to Google Sheets.
 
-## Expanding the ESLint configuration
+## Technologies
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- Tailwind CSS
+- Google Sheets (via Google Apps Script)
+
+## Setup
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/your-username/wedding-app.git
+cd wedding-app
+```
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Start Develpment Server
+
+```bash
+npm run dev
+```
+
+The app will run on http://localhost:5173
