@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 
 const MensagemForm = () => {
-  const [formData, setFormData] = useState({ nome: "", mensagem: "" });
+  const [formData, setFormData] = useState({
+    nome: "",
+    mensagem: "",
+    autocarro: "",
+  });
   const [mensagemEnviada, setMensagemEnviada] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -19,7 +23,7 @@ const MensagemForm = () => {
 
     try {
       const proxyUrl =
-        "https://cloudflare-cors-anywhere.madnm92.workers.dev/?uri=https://script.google.com/macros/s/AKfycbyNgS2iE3fTa8SreRKV5Xb0_gSSUVHvolfOG4bL6pVPIu5M9xsUvFhddQ0jErUB8XZY/exec";
+        "https://cloudflare-cors-anywhere.madnm92.workers.dev/?uri=https://script.google.com/macros/s/AKfycbzTcJFUgDmUF8-wq8pSwb_GSmR7pEP1HHNoDbjtJq4ib1X-FRoL1c0yYwFoazI8bDi9/exec";
 
       const response = await fetch(proxyUrl, {
         method: "POST",
@@ -83,6 +87,39 @@ const MensagemForm = () => {
           onChange={handleChange}
           required
         ></textarea>
+
+        {/* Radio button option for Autocarro */}
+        <div className="mb-6">
+          <p className="mb-2 font-semibold text-lg">
+            Precisas de autocarro do centro de Zaragoza para o local (ida e
+            volta)?
+          </p>
+          <div className="flex justify-center items-center gap-8">
+            <label className="flex items-center gap-2 cursor-pointer text-lg">
+              <input
+                type="radio"
+                name="autocarro"
+                value="sim"
+                checked={formData.autocarro === "sim"}
+                onChange={handleChange}
+                className="w-5 h-5"
+              />
+              <span>Sim</span>
+            </label>
+            <label className="flex items-center gap-2 cursor-pointer text-lg">
+              <input
+                type="radio"
+                name="autocarro"
+                value="nao"
+                checked={formData.autocarro === "nao"}
+                onChange={handleChange}
+                className="w-5 h-5"
+              />
+              <span>Não</span>
+            </label>
+          </div>
+        </div>
+
         <button
           className="bg-primary text-white px-6 py-2 rounded-md hover:bg-opacity-80"
           type="submit"

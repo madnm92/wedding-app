@@ -61,6 +61,101 @@ function App() {
       {/* 📍 Seção do Google Maps */}
       <Map />
 
+      {/* Seção: Como Chegar */}
+      <section className="py-12 bg-card text-secondary text-center md:text-left max-w-4xl mx-auto px-6 rounded-lg shadow-lg mt-6">
+        <h2 className="text-3xl font-semibold text-primary mb-6">
+          Como Chegar
+        </h2>
+
+        <p className="leading-relaxed text-lg mb-8">
+          Existem várias opções para chegar ao local:
+        </p>
+
+        <ul className="space-y-6">
+          {/* Opção: Carro */}
+          <li className="flex flex-col md:flex-row md:items-start md:space-x-4">
+            <div className="mb-2 md:mb-0">
+              <span className="inline-block text-2xl">🚗</span>
+            </div>
+            <div>
+              <strong className="font-semibold">De Carro:</strong>{" "}
+              <span className="text-secondary">
+                Há estacionamento disponível no local.
+              </span>
+            </div>
+          </li>
+
+          {/* Opção: Autocarro */}
+          <li className="flex flex-col md:flex-row md:items-start md:space-x-4">
+            <div className="mb-2 md:mb-0">
+              <span className="inline-block text-2xl">🚌</span>
+            </div>
+            <div>
+              <strong className="font-semibold">De Autocarro:</strong>{" "}
+              <span className="text-secondary">
+                Um autocarro estará disponível no centro de Zaragoza para levar
+                os convidados até ao local. Os horários e o local de partida
+                serão informados mais à frente.
+              </span>
+            </div>
+          </li>
+
+          {/* Opção: Vindo de Portugal */}
+          <li className="flex flex-col md:flex-row md:items-start md:space-x-4">
+            <div className="mb-2 md:mb-0">
+              <span className="inline-block text-2xl">✈️</span>
+            </div>
+            <div>
+              <strong className="font-semibold">
+                Para quem vem de Portugal (sem carro):
+              </strong>{" "}
+              <span className="text-secondary">
+                Pode voar para <strong>Madrid ou Barcelona</strong> e, depois,
+                apanhar um AVE (comboio de alta velocidade) para Zaragoza. Ver
+                com antecedência!
+              </span>
+              <div className="mt-2">
+                <span className="font-semibold">Empresas de AVE:</span>
+                <ul className="list-disc list-inside ml-4 mt-1 text-secondary space-y-2 text-left">
+                  <li>
+                    <a
+                      href="https://www.renfe.com/es/es"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-800 underline"
+                    >
+                      RENFE
+                    </a>{" "}
+                    (operadora estatal)
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.ouigo.com/es/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-800 underline"
+                    >
+                      OUIGO
+                    </a>{" "}
+                    (lowcost)
+                  </li>
+                  <li>
+                    <a
+                      href="https://iryo.eu/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-800 underline"
+                    >
+                      IRYO
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
       {/* Formulário de Mensagens */}
       <MensageForm />
 
