@@ -1,121 +1,126 @@
-import React from "react";
-import Map from "./components/map";
-import MensageForm from "./components/mensageForm";
+import React, { useState } from "react";
+import Map from "./components/Map";
+import MessageForm from "./components/MessageForm";
+import { getTranslations } from "./translations/translations";
+import LanguageToggle from "./components/LanguageToggle";
 
 function App() {
+  // Language state
+  const [currentLanguage, setCurrentLanguage] = useState("pt");
+
+  // Load translated texts based on current language
+  const translations = getTranslations(currentLanguage);
+
+  // Toggle between Portuguese and Spanish
+  const toggleLanguage = () => {
+    setCurrentLanguage((prev) => (prev === "pt" ? "es" : "pt"));
+  };
+
   return (
     <div className="min-h-screen bg-background text-secondary">
+      {/* Language switch button */}
+      <LanguageToggle
+        currentLanguage={currentLanguage}
+        toggleLanguage={toggleLanguage}
+      />
+
       {/* Header */}
       <header className="bg-card shadow-md p-6 flex flex-col md:flex-row items-center justify-center text-center md:text-left rounded-lg mx-auto max-w-5xl mt-6">
-        {/* Texto do Casamento */}
         <div className="md:mr-6">
-          <h1 className="text-4xl font-bold text-primary">
-            Casamento de Miguel & Marta
+          <h1 className="text-5xl text-primary font-dancing text-center my-4">
+            {translations.header.title}
           </h1>
         </div>
 
-        {/* Imagem do Save the Date */}
         <img
           src="/wedding-app/images/save_the_date.png"
           alt="Save the Date"
-          className="w-56 h-auto md:w-72 rounded-lg shadow-lg border border-secondary"
+          className="w-full md:w-[320px] h-[220px] object-cover rounded-xl shadow-lg border border-secondary"
         />
       </header>
 
-      {/* Seção Sobre Nós */}
+      {/* About Us section */}
       <section className="py-12 bg-card text-secondary text-center md:text-left md:flex items-center max-w-4xl mx-auto px-6 rounded-lg shadow-lg mt-6">
-        {/* Foto do Casal */}
         <img
           src="/wedding-app/images/miguel_marta.jpg"
           alt="Miguel & Marta"
           className="w-48 h-48 mx-auto md:mx-0 md:mr-6 rounded-full shadow-md object-cover border-4 border-white"
         />
 
-        {/* Texto */}
         <div className="md:ml-8 text-center md:text-left">
           <h2 className="text-3xl font-semibold text-primary mb-4">
-            📖 A Nossa História
+            {translations.story.title}
           </h2>
-          <p className="leading-relaxed">
-            Tudo começou no Porto, onde um de nós estava distraído com a vista
-            do Douro, e o outro já estava a pensar onde comer a próxima
-            francesinha. Entre passeios por ruelas, copos de vinho (dois... ou
-            três) e muitas conversas, percebemos que tínhamos encontrado algo
-            especial um no outro!
-          </p>
+          <p className="leading-relaxed">{translations.story.paragraph1}</p>
           <p className="leading-relaxed mt-3">
-            O tempo passou e, como bons aventureiros, decidimos trocar o Porto
-            pelo sol (e pelo vento) de Zaragoza. Entre estas duas cidades, temos
-            vindo a construir a nossa vida juntos: colecionando histórias,
-            discutindo sobre a temperatura ideal do ar condicionado, sobre
-            deixar a tampa da sanita para cima, mas acima de tudo, continuando a
-            planear o futuro.
+            {translations.story.paragraph2}
           </p>
           <p className="leading-relaxed mt-3 font-semibold">
-            Agora, chegou o momento de dar o próximo passo: celebrar o nosso dia
-            com todos vocês! 🎉
+            {translations.story.paragraph3}
           </p>
         </div>
       </section>
 
-      {/* 📍 Seção do Google Maps */}
-      <Map />
+      {/* Map component */}
+      <Map currentLanguage={currentLanguage} />
 
-      {/* Seção: Como Chegar */}
+      {/* How to get there */}
       <section className="py-12 bg-card text-secondary text-center md:text-left max-w-4xl mx-auto px-6 rounded-lg shadow-lg mt-6">
         <h2 className="text-3xl font-semibold text-primary mb-6">
-          Como Chegar
+          {translations.howToArrive.title}
         </h2>
 
         <p className="leading-relaxed text-lg mb-8">
-          Existem várias opções para chegar ao local:
+          {translations.howToArrive.intro}
         </p>
 
         <ul className="space-y-6">
-          {/* Opção: Carro */}
+          {/* By car */}
           <li className="flex flex-col md:flex-row md:items-start md:space-x-4">
             <div className="mb-2 md:mb-0">
-              <span className="inline-block text-2xl">🚗</span>
+              <span className="inline-block text-2xl">🚘</span>
             </div>
             <div>
-              <strong className="font-semibold">De Carro:</strong>{" "}
+              <strong className="font-semibold">
+                {translations.howToArrive.byCarTitle}
+              </strong>{" "}
               <span className="text-secondary">
-                Há estacionamento disponível no local.
+                {translations.howToArrive.byCarDescription}
               </span>
             </div>
           </li>
 
-          {/* Opção: Autocarro */}
+          {/* By bus */}
           <li className="flex flex-col md:flex-row md:items-start md:space-x-4">
             <div className="mb-2 md:mb-0">
               <span className="inline-block text-2xl">🚌</span>
             </div>
             <div>
-              <strong className="font-semibold">De Autocarro:</strong>{" "}
+              <strong className="font-semibold">
+                {translations.howToArrive.byBusTitle}
+              </strong>{" "}
               <span className="text-secondary">
-                Um autocarro estará disponível no centro de Zaragoza para levar
-                os convidados até ao local. Os horários e o local de partida
-                serão informados mais à frente.
+                {translations.howToArrive.byBusDescription}
               </span>
             </div>
           </li>
 
-          {/* Opção: Vindo de Portugal */}
+          {/* From Portugal */}
           <li className="flex flex-col md:flex-row md:items-start md:space-x-4">
             <div className="mb-2 md:mb-0">
               <span className="inline-block text-2xl">✈️</span>
             </div>
             <div>
               <strong className="font-semibold">
-                Para quem vem de Portugal (sem carro):
+                {translations.howToArrive.fromPortugalTitle}
               </strong>{" "}
               <span className="text-secondary">
-                Pode voar para <strong>Madrid ou Barcelona</strong> e, depois,
-                apanhar um AVE (comboio de alta velocidade) para Zaragoza. Ver
-                com antecedência!
+                {translations.howToArrive.fromPortugalDescription}
               </span>
               <div className="mt-2">
-                <span className="font-semibold">Empresas de AVE:</span>
+                <span className="font-semibold">
+                  {translations.howToArrive.aveCompanies}
+                </span>
                 <ul className="list-disc list-inside ml-4 mt-1 text-secondary space-y-2 text-left">
                   <li>
                     <a
@@ -124,9 +129,9 @@ function App() {
                       rel="noopener noreferrer"
                       className="text-blue-600 hover:text-blue-800 underline"
                     >
-                      RENFE
-                    </a>{" "}
-                    (operadora estatal)
+                      {translations.howToArrive.renfe}{" "}
+                    </a>
+                    <span className="text-secondary">(operadora estatal)</span>
                   </li>
                   <li>
                     <a
@@ -135,18 +140,18 @@ function App() {
                       rel="noopener noreferrer"
                       className="text-blue-600 hover:text-blue-800 underline"
                     >
-                      OUIGO
-                    </a>{" "}
-                    (lowcost)
+                      {translations.howToArrive.ouigo}
+                    </a>
+                    <span className="text-secondary"> (lowcost)</span>
                   </li>
                   <li>
                     <a
-                      href="https://iryo.eu/"
+                      href="https://iryo.eu/es/home"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-blue-600 hover:text-blue-800 underline"
                     >
-                      IRYO
+                      {translations.howToArrive.iryo}
                     </a>
                   </li>
                 </ul>
@@ -156,12 +161,12 @@ function App() {
         </ul>
       </section>
 
-      {/* Formulário de Mensagens */}
-      <MensageForm />
+      {/* Message form */}
+      <MessageForm currentLanguage={currentLanguage} />
 
-      {/* Rodapé */}
+      {/* Footer */}
       <footer className="bg-primary text-white py-6 text-center mt-6 rounded-lg max-w-5xl mx-auto">
-        <p>Casamento de Marta & Miguel - 2025</p>
+        <p>{translations.footer.text}</p>
       </footer>
     </div>
   );

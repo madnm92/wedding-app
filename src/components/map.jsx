@@ -1,9 +1,13 @@
 import React from "react";
+import { getTranslations } from "../translations/translations";
 
-function Mapa() {
+function Map({ currentLanguage }) {
+  const translations = getTranslations(currentLanguage);
+
   return (
     <section className="py-12 bg-gray-100 text-center">
-      <h2 className="text-3xl font-semibold">📍 Localização do Casamento</h2>
+      <h2 className="text-3xl font-semibold">{translations.location.title}</h2>
+
       <p className="text-gray-700 mt-2">
         Restaurante 8.0.1 Gastro & Wine | Tierra de Cubas
       </p>
@@ -21,4 +25,4 @@ function Mapa() {
   );
 }
 
-export default Mapa;
+export default Map;
