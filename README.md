@@ -10,9 +10,11 @@ A single-page application (SPA) built with React and Tailwind CSS. This page man
 
 ## Technologies
 
-- React
-- Tailwind CSS
-- Google Sheets (via Google Apps Script)
+- Frontend: React + Tailwind CSS
+- Build Tool: Vite
+- Backend: Google Apps Script (serverless)
+- Database: Google Sheets (via script)
+- Deployment: GitHub Pages (static hosting)
 
 ## Setup
 
