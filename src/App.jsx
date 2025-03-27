@@ -6,8 +6,15 @@ import LanguageToggle from "./components/LanguageToggle";
 
 function App() {
   // Language state
-  const [currentLanguage, setCurrentLanguage] = useState("pt");
+  const getInitialLanguage = () => {
+    const browserLanguage = navigator.language || navigator.userLanguage; // ex: "pt-PT", "es-ES"
+    console.log("Detected language:", navigator.language);
+    if (browserLanguage.startsWith("es")) return "es";
+    if (browserLanguage.startsWith("pt")) return "pt";
+    return "pt";
+  };
 
+  const [currentLanguage, setCurrentLanguage] = useState(getInitialLanguage);
   // Load translated texts based on current language
   const translations = getTranslations(currentLanguage);
 

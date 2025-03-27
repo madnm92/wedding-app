@@ -1,6 +1,6 @@
 const es = {
   header: {
-    title: "Boda de Marta & Miguel",
+    title: "Boda de",
   },
   story: {
     title: "📖 Nuestra Historia",

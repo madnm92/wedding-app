@@ -20,7 +20,7 @@ const MessageForm = ({ currentLanguage }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    console.log("Enviando dados para a API:", formData);
+    console.log("Sending data to API:", formData);
 
     try {
       const proxyUrl =
@@ -36,14 +36,14 @@ const MessageForm = ({ currentLanguage }) => {
       console.log("Response status:" + response.status);
 
       if (response.status === 0) {
-        console.log("Redirected. Considerando a resposta sucesso.");
+        console.log("Redirected. Considering success response.");
         setMensagemEnviada(translations.form.success);
         setFormData({ nome: "", mensagem: "", autocarro: "" });
         return;
       }
 
       const result = await response.json();
-      console.log("Resposta da API:", result);
+      console.log("API Response:", result);
 
       if (!response.ok) {
         throw new Error(`Erro ${response.status}: ${response.statusText}`);
