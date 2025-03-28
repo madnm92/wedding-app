@@ -40,7 +40,7 @@ const pt = {
     iryo: "IRYO",
   },
   footer: {
-    text: "Casamento de Marta & Miguel - 27-9-2025",
+    text: "Casamento de Marta & Miguel",
   },
   form: {
     title:

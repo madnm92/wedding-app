@@ -40,7 +40,7 @@ const es = {
     iryo: "IRYO",
   },
   footer: {
-    text: "Boda de Marta & Miguel - 27-9-2025",
+    text: "Enlace de Marta & Miguel",
   },
   form: {
     title: "📨 Nuestra caja de mensajes te espera. Pero no nos llenes de spam…",
