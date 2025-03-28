@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import { getTranslations } from "../translations/translations";
 
-const MessageForm = ({ currentLanguage }) => {
-  const translations = getTranslations(currentLanguage);
-
+const MessageForm = ({ translations }) => {
   const [formData, setFormData] = useState({
     nome: "",
     mensagem: "",
@@ -11,7 +8,15 @@ const MessageForm = ({ currentLanguage }) => {
   });
 
   const [mensagemEnviada, setMensagemEnviada] = useState("");
+  const [showMensagem, setShowMensagem] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+
+  // Helper to show message with auto-hide
+  const showTemporaryMessage = (message) => {
+    setMensagemEnviada(message);
+    setShowMensagem(true);
+    setTimeout(() => setShowMensagem(false), 5000);
+  };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -35,9 +40,13 @@ const MessageForm = ({ currentLanguage }) => {
 
       console.log("Response status:" + response.status);
 
+      // If the response status is 0, it indicates a redirect response due to the fetch request's redirect handling.
+      // In this case, we treat the redirection as a success and manually set the success message to the user
+      // since the data was successfully saved, even though the redirection happened.
+      // This is because the response status 0 is not an error, but the result of following the redirect.
       if (response.status === 0) {
         console.log("Redirected. Considering success response.");
-        setMensagemEnviada(translations.form.success);
+        showTemporaryMessage(translations.form.success);
         setFormData({ nome: "", mensagem: "", autocarro: "" });
         return;
       }
@@ -49,18 +58,21 @@ const MessageForm = ({ currentLanguage }) => {
         throw new Error(`Erro ${response.status}: ${response.statusText}`);
       }
 
-      setMensagemEnviada(translations.form.success);
+      showTemporaryMessage(translations.form.success);
       setFormData({ nome: "", mensagem: "", autocarro: "" });
     } catch (error) {
       console.error("Erro ao enviar:", error);
-      setMensagemEnviada(`${translations.form.error}: ${error.message}`);
+      showTemporaryMessage(`${translations.form.error}: ${error.message}`);
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-    <section className="py-12 text-center bg-card rounded-lg shadow-lg max-w-5xl mx-auto mt-6 p-6">
+    <section
+      className="py-12 bg-opacity-75 text-center bg-card rounded-lg shadow-lg max-w-5xl mx-auto mt-6 p-6"
+      data-testid="message-form"
+    >
       <h2 className="text-3xl font-semibold text-primary">
         {translations.form.title}
       </h2>
@@ -71,6 +83,7 @@ const MessageForm = ({ currentLanguage }) => {
           name="nome"
           placeholder={translations.form.namePlaceholder}
           className="w-full p-3 border border-secondary rounded-md bg-white text-secondary mb-4"
+          data-testid="message-form-name"
           value={formData.nome}
           onChange={handleChange}
           required
@@ -80,12 +93,13 @@ const MessageForm = ({ currentLanguage }) => {
           name="mensagem"
           placeholder={translations.form.messagePlaceholder}
           className="w-full p-3 border border-secondary rounded-md bg-white text-secondary mb-4"
+          data-testid="message-form-message"
           value={formData.mensagem}
           onChange={handleChange}
           required
         ></textarea>
 
-        {/* Bus question and options */}
+        {/* Bus question */}
         <div className="mb-6">
           <p className="mb-2 font-semibold text-lg">
             {translations.form.busQuestion}
@@ -99,6 +113,7 @@ const MessageForm = ({ currentLanguage }) => {
                 checked={formData.autocarro === "sim"}
                 onChange={handleChange}
                 className="w-5 h-5"
+                data-testid="message-form-radio-yes"
               />
               <span>{translations.form.yes}</span>
             </label>
@@ -110,6 +125,7 @@ const MessageForm = ({ currentLanguage }) => {
                 checked={formData.autocarro === "nao"}
                 onChange={handleChange}
                 className="w-5 h-5"
+                data-testid="message-form-radio-no"
               />
               <span>{translations.form.no}</span>
             </label>
@@ -120,19 +136,23 @@ const MessageForm = ({ currentLanguage }) => {
           className="bg-primary text-white px-6 py-2 rounded-md hover:bg-opacity-80"
           type="submit"
           disabled={isLoading}
+          data-testid="message-form-submit"
         >
           {isLoading ? translations.form.sending : translations.form.send}
         </button>
       </form>
 
-      {mensagemEnviada && (
+      {/* Feedback message */}
+      {showMensagem && (
         <p
-          className={`mt-4 ${
-            mensagemEnviada.includes("Erro") ||
-            mensagemEnviada.includes("Error")
-              ? "text-red-600"
-              : "text-green-600"
-          }`}
+          className={`mt-4 px-4 py-2 rounded-md transition-all duration-500 ease-in-out transform
+            ${
+              mensagemEnviada.includes("Erro") ||
+              mensagemEnviada.includes("Error")
+                ? "text-red-700 bg-red-100"
+                : "text-green-700 bg-green-100"
+            }`}
+          data-testid="message-form-response"
         >
           {mensagemEnviada}
         </p>

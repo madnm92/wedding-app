@@ -1,14 +1,16 @@
 import React from "react";
-import { getTranslations } from "../translations/translations";
 
-function Map({ currentLanguage }) {
-  const translations = getTranslations(currentLanguage);
-
+function Map({ translations }) {
   return (
-    <section className="py-12 bg-gray-100 text-center">
-      <h2 className="text-3xl font-semibold">{translations.location.title}</h2>
+    <section
+      className="py-12 bg-gray-100 bg-opacity-75 text-center"
+      data-testid="map"
+    >
+      <h2 className="text-3xl font-semibold text-primary mb-6">
+        {translations.location.title}
+      </h2>
 
-      <p className="text-gray-700 mt-2">
+      <p className="text-secondary mt-2">
         Restaurante 8.0.1 Gastro & Wine | Tierra de Cubas
       </p>
 
@@ -19,6 +21,7 @@ function Map({ currentLanguage }) {
           allowFullScreen=""
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
+          data-testid="map-iframe"
         ></iframe>
       </div>
     </section>

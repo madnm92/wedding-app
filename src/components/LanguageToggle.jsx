@@ -6,6 +6,7 @@ const LanguageToggle = ({ currentLanguage, toggleLanguage }) => {
       <button
         onClick={toggleLanguage}
         className="text-sm text-primary hover:text-opacity-80 flex items-center gap-2"
+        data-testid="language-toggle-button"
       >
         {currentLanguage === "pt" ? (
           <>

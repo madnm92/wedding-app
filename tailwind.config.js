@@ -7,9 +7,14 @@ export default {
         dancing: ["'Dancing Script'", "cursive"],
       },
       colors: {
-        primary: "#6d1d1d", // Bordô/Vinho (Títulos e botões)
-        secondary: "#8c5c3b", // Marrom suave (Textos)
-        card: "#e8dfd1", // Bege claro (Seções e caixas)
+        primary: "#2a4d8f", // Azul cobalto (Títulos e botões)
+        secondary: "#1e293b", // Azul escuro neutro (Textos)
+        card: "#f5f7fa", // Branco suave (Seções e caixas)
+        background: "#ffffff", // Branco puro (Fundo geral)
+        accent: "#a2c1e2", // Azul claro (detalhes, hover)
+      },
+      backgroundImage: {
+        decorative: "url('/wedding-app/images/azulejo.jpg')",
       },
     },
   },

@@ -1,6 +1,15 @@
 const es = {
   header: {
-    title: "Boda de",
+    title: "Enlace de",
+    names: "Marta & Miguel",
+  },
+  countdown: {
+    title: "Solo faltan...",
+    days: "días",
+    hours: "horas",
+    minutes: "minutos",
+    seconds: "segundos",
+    celebration: "¡Es el gran día!",
   },
   story: {
     title: "📖 Nuestra Historia",
@@ -18,10 +27,10 @@ const es = {
     title: "Cómo Llegar",
     intro: "Hay varias formas de llegar al lugar:",
     byCarTitle: "En Coche:",
-    byCarDescription: "Hay aparcamiento disponible en el lugar.",
+    byCarDescription: "Hay aparcamiento disponible en el recinto.",
     byBusTitle: "En Autobús:",
     byBusDescription:
-      "Habrá un autobús disponible desde el centro de Zaragoza para llevar a los invitados hasta el lugar. Los horarios y el punto de salida se comunicarán más adelante.",
+      "Habrá un autobús disponible desde el centro de Zaragoza para llevar a los invitados hasta el destino. Los horarios y el punto de salida se comunicarán más adelante.",
     fromPortugalTitle: "Para quienes vienen de Portugal (sin coche):",
     fromPortugalDescription:
       "Se puede volar a Madrid o Barcelona y, después, coger un AVE (tren de alta velocidad) hasta Zaragoza. ¡Mejor mirar con antelación!",
@@ -31,7 +40,7 @@ const es = {
     iryo: "IRYO",
   },
   footer: {
-    text: "Boda de Marta & Miguel - 2025",
+    text: "Boda de Marta & Miguel - 27-9-2025",
   },
   form: {
     title: "📨 Nuestra caja de mensajes te espera. Pero no nos llenes de spam…",
@@ -45,6 +54,10 @@ const es = {
     sending: "Enviando...",
     success: "¡Mensaje enviado con éxito!",
     error: "Error al enviar el mensaje",
+  },
+  errors: {
+    map: "Error al cargar el mapa. Inténtalo más tarde.",
+    countdown: "Error al cargar la cuenta atrás.",
   },
 };
 
