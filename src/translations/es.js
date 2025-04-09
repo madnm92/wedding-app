@@ -43,7 +43,7 @@ const es = {
     text: "Enlace de Marta & Miguel",
   },
   form: {
-    title: "📨 Nuestra caja de mensajes te espera. Pero no nos llenes de spam…",
+    title: "📨 Nuestro buzón te espera. Pero no nos llenes de spam…",
     namePlaceholder: "Nombre",
     messagePlaceholder: "Mensaje",
     busQuestion:
