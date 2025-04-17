@@ -48,6 +48,7 @@ const es = {
     messagePlaceholder: "Mensaje",
     busQuestion:
       "¿Necesitas autobús desde el centro de Zaragoza hasta el lugar (ida y vuelta)?",
+    busPerPerson: "⚠️ Por favor, envía una respuesta por cada persona.",
     yes: "Sí",
     no: "No",
     send: "Enviar",

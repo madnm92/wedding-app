@@ -104,6 +104,9 @@ const MessageForm = ({ translations }) => {
           <p className="mb-2 font-semibold text-lg">
             {translations.form.busQuestion}
           </p>
+          <p className="mb-2 font-semibold text-lg">
+            {translations.form.busPerPerson}
+          </p>
           <div className="flex justify-center items-center gap-8">
             <label className="flex items-center gap-2 cursor-pointer text-lg">
               <input

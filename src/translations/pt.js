@@ -49,6 +49,7 @@ const pt = {
     messagePlaceholder: "Mensagem",
     busQuestion:
       "Precisas de autocarro do centro de Zaragoza para o local (ida e volta)?",
+    busPerPerson: "⚠️ Por favor, submeter uma resposta por pessoa.",
     yes: "Sim",
     no: "Não",
     send: "Enviar",
