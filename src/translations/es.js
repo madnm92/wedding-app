@@ -39,16 +39,47 @@ const es = {
     ouigo: "OUIGO",
     iryo: "IRYO",
   },
+  whatToDoInZaragoza: {
+    title: "🗺️ Qué hacer en Zaragoza",
+    intro:
+      "Si llegas antes o te quedas después de la boda, ¡aprovecha para explorar un poco la ciudad! Aquí tienes un mapa con puntos de interés y sugerencias para visitar.",
+    swipeImage: "↔ Desliza para ver el mapa completo",
+    highlightsTitle: "No puedes dejar de:",
+    highlights: [
+      "Pasear por las calles del casco histórico, con dos mil años de historia (5).",
+      "Probar las típicas tapas en la zona de El Tubo (6).",
+      "Caminar por el elegante Paseo de la Independencia hasta la Plaza de Aragón (7).",
+      "Visitar La Seo, la segunda catedral de la ciudad (8).",
+      {
+        text: "Algunos de nuestros bares/restaurantes favoritos son:",
+        links: [
+          {
+            href: "https://g.co/kgs/4jLFS4C",
+            label: "Taberna Doña Casta (Croquetas) - Zona de El Tubo (6)",
+          },
+          {
+            href: "https://g.co/kgs/iaQbiSX",
+            label: "Bar El Circo (Torrezno y Tortilla) - Centro (5)",
+          },
+          {
+            href: "https://g.co/kgs/hxzmB8B",
+            label: "Restaurante El Fuelle - La Magdalena",
+          },
+        ],
+      },
+    ],
+  },
   footer: {
     text: "Enlace de Marta & Miguel",
   },
   form: {
     title: "📨 Nuestro buzón te espera. Pero no nos llenes de spam…",
     namePlaceholder: "Nombre",
-    messagePlaceholder: "Mensaje",
+    messagePlaceholder:
+      "Mensaje - ⚠️ Si tienes alguna alergia alimentaria, por favor, indícalo aquí.",
     busQuestion:
       "¿Necesitas autobús desde el centro de Zaragoza hasta el lugar (ida y vuelta)?",
-    busPerPerson: "⚠️ Por favor, envía una respuesta por cada persona.",
+    busPerPerson: "Por favor, envía una respuesta por cada persona.",
     yes: "Sí",
     no: "No",
     send: "Enviar",

@@ -7,6 +7,7 @@ import { getTranslations } from "./translations/translations";
 import LanguageToggle from "./components/LanguageToggle";
 import CountdownTimer from "./components/Countdown";
 import ErrorBoundary from "./components/ErrorBoundary";
+import WhatToDo from "./components/WhatToDo";
 
 function App() {
   // Language state
@@ -56,7 +57,7 @@ function App() {
 
         <ErrorBoundary fallback={translations.errors.countdown}>
           <CountdownTimer
-            date="2025-09-27T12:00:00"
+            date="2025-09-27T12:30:00"
             translations={translations}
           />
         </ErrorBoundary>
@@ -68,6 +69,7 @@ function App() {
         </ErrorBoundary>
 
         <HowToGetThere translations={translations} />
+        <WhatToDo translations={translations} />
         <MessageForm translations={translations} />
 
         <footer className="bg-primary bg-opacity-75 text-white py-6 text-center mt-6 rounded-lg max-w-5xl mx-auto">

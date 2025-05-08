@@ -39,6 +39,36 @@ const pt = {
     ouigo: "OUIGO",
     iryo: "IRYO",
   },
+  whatToDoInZaragoza: {
+    title: "🗺️ O que fazer em Zaragoza",
+    intro:
+      "Se chegares antes ou ficas depois do casamento, aproveita para explorar um pouco a cidade! Aqui tens um mapa com pontos de interesse e sugestões do que visitar.",
+    swipeImage: "↔ Desliza para ver o mapa completo",
+    highlightsTitle: "Não podem deixar de:",
+    highlights: [
+      "Passear pelas ruas do centro histórico, com dois mil anos de história (5).",
+      "Provar as típicas tapas na zona de El Tubo (6)",
+      "Caminhar pelo elegante Paseo de la Independência até à Plaza de Aragón (7).",
+      "Visitar La Seo, a segunda catedral da cidade (8).",
+      {
+        text: "Alguns dos nossos bares/restaurantes favoritos para petiscar são:",
+        links: [
+          {
+            href: "https://g.co/kgs/4jLFS4C",
+            label: "Taberna Doña Casta (Croquetas) - Zona de El Tubo (6)",
+          },
+          {
+            href: "https://g.co/kgs/iaQbiSX",
+            label: "Bar El Circo (Torrezno e Tortilla) - Zona Centro",
+          },
+          {
+            href: "https://g.co/kgs/hxzmB8B",
+            label: "Restaurante El Fuelle - La Magdalena",
+          },
+        ],
+      },
+    ],
+  },
   footer: {
     text: "Casamento de Marta & Miguel",
   },
@@ -46,10 +76,11 @@ const pt = {
     title:
       "📨 A nossa caixa de mensagens está à tua espera. Não nos enchas de spam…",
     namePlaceholder: "Nome",
-    messagePlaceholder: "Mensagem",
+    messagePlaceholder:
+      "Mensagem - ⚠️ Se tiveres alguma alergia ou restrição alimentar, por favor, menciona.",
     busQuestion:
       "Precisas de autocarro do centro de Zaragoza para o local (ida e volta)?",
-    busPerPerson: "⚠️ Por favor, submeter uma resposta por pessoa.",
+    busPerPerson: "Por favor, submeter uma resposta por pessoa.",
     yes: "Sim",
     no: "Não",
     send: "Enviar",
