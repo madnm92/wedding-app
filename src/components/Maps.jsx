@@ -1,10 +1,8 @@
-import React from "react";
-
-function Map({ translations }) {
+export function WeddingMap({ translations }) {
   return (
     <section
       className="py-12 bg-gray-100 bg-opacity-75 text-center"
-      data-testid="map"
+      data-testid="wedding-map"
     >
       <h2 className="text-3xl font-semibold text-primary mb-6">
         {translations.location.title}
@@ -21,11 +19,27 @@ function Map({ translations }) {
           allowFullScreen=""
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          data-testid="map-iframe"
         ></iframe>
       </div>
     </section>
   );
 }
 
-export default Map;
+export function BusMap() {
+  return (
+    <section
+      className="py-12 bg-gray-100 bg-opacity-75 text-center"
+      data-testid="bus-map"
+    >
+      <div className="mt-6 flex justify-center">
+        <iframe
+          className="w-full md:w-2/3 h-64 md:h-96 rounded-lg shadow-md"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d745.1951544224078!2d-0.8813197811951904!3d41.66048176239186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd591493a4611825%3A0xad419b5ba66ab17c!2sAparcamiento%20de%20Autobuses!5e0!3m2!1spt-PT!2ses!4v1757861945203!5m2!1spt-PT!2ses"
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+  );
+}

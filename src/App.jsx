@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import Map from "./components/Map";
+import { useState } from "react";
+import { WeddingMap } from "./components/Maps";
 import MessageForm from "./components/MessageForm";
 import AboutUs from "./components/AboutUs";
 import HowToGetThere from "./components/HowToGetThere";
@@ -65,7 +65,7 @@ function App() {
         <AboutUs translations={translations} />
 
         <ErrorBoundary fallback={translations.errors.map}>
-          <Map translations={translations} />
+          <WeddingMap translations={translations} />
         </ErrorBoundary>
 
         <HowToGetThere translations={translations} />

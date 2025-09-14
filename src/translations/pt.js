@@ -30,7 +30,7 @@ const pt = {
     byCarDescription: "Há estacionamento disponível no local.",
     byBusTitle: "De Autocarro:",
     byBusDescription:
-      "Um autocarro estará disponível no centro de Zaragoza para levar os convidados até ao local. Os horários e o local de partida serão informados mais próximo da data.",
+      "O autocarro sai às 11h desde Av. de los Pirineos, 1,22. O horário de regresso será às 00h30.",
     fromPortugalTitle: "Para quem vem de Portugal (sem carro):",
     fromPortugalDescription:
       "Pode voar para Madrid ou Barcelona e, depois, apanhar um AVE (comboio de alta velocidade) para Zaragoza. Ver com antecedência!",

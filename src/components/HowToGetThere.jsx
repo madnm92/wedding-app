@@ -1,4 +1,4 @@
-import React from "react";
+import { BusMap } from "./Maps";
 
 function HowToGetThere({ translations }) {
   return (
@@ -40,6 +40,8 @@ function HowToGetThere({ translations }) {
             <span className="text-secondary">
               {translations.howToArrive.byBusDescription}
             </span>
+            {/* Reuse BusMap component */}
+            <BusMap />
           </div>
         </li>
 
